@@ -12,4 +12,4 @@ Feel free to [![](https://img.shields.io/twitter/url/http/shields.io.svg?style=s
 
 ## License
 
-Alarm Clock is available under the MIT license.
+Credit cards is available under the MIT license.
