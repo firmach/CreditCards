@@ -15,7 +15,6 @@ struct CardsView : View {
     
     let transparencyAngle = 50.0
     let card3DRotationAngle: Double = 14
-    let menuItemSize: CGFloat = 66
     
     
     // MARK: - Properties
@@ -37,6 +36,8 @@ struct CardsView : View {
     
     @State private var indexView = IndexView()
     
+    @State private var menuItemSize: CGFloat = 66
+
     
     // MARK: - Helper
     
@@ -136,6 +137,12 @@ struct CardsView : View {
                                 .gesture(TapGesture().onEnded {
                                     withAnimation(.easeInOut(duration: 0.2)) {
                                         self.showCardMenu.toggle()
+                                    }
+                                })
+                                // getting height to calculate menu item size. hack :)
+                                .overlay(GeometryReader { g in
+                                    Color.clear.onAppear {
+                                        self.menuItemSize = g.size.height / 3
                                     }
                                 })
                             
